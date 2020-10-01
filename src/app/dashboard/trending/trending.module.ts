@@ -1,0 +1,18 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { TrendingRoutingModule } from './trending-routing.module';
+
+import { TrendingComponent } from './container/trending.component';
+
+
+@NgModule({
+    imports: [
+      CommonModule,
+      TrendingRoutingModule
+    ],
+    declarations: [
+      TrendingComponent
+    ]
+})
+export class TrendingModule {}
