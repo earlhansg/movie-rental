@@ -1,0 +1,104 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "The Wailing",
+      "imageUrl": "assets/images/movies/the-wailing.jpg",
+      "ratings": 7.9,
+      "genre": "Mystery, Trilling",
+      "status": "trending",
+      "directed": "Juan dela Cruz",
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Warcraft",
+      "imageUrl": "assets/images/movies/warcraft.jpeg",
+      "ratings": 5,
+      "genre": "Action, Adventure",
+      "status": "coming",
+      "directed": "Pedro Lim",
+      "available": false
+    },
+    {
+      "id": 3,
+      "name": "The Space Between Us",
+      "imageUrl": "assets/images/movies/space-between-us.jpg",
+      "ratings": 8.1,
+      "genre": "Drama, Sci-fi",
+      "status": "borrowed",
+      "directed": "Lili G",
+      "available": false
+    },
+    {
+      "id": 4,
+      "name": "The Witch",
+      "imageUrl": "assets/images/movies/the-witch.jpg",
+      "ratings": 7,
+      "genre": "Horror, Mystery",
+      "status": "",
+      "directed": "Peter Pan",
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "X-MEN Apocalypse",
+      "imageUrl": "assets/images/movies/xmen-apocalypse.jpg",
+      "ratings": 8.1,
+      "genre": "Action, Adventure, Sci-fi",
+      "status": "borrowed",
+      "directed": "Leo Santa Cruz",
+      "available": false
+    },
+    {
+      "id": 6,
+      "name": "Me Before You",
+      "imageUrl": "assets/images/movies/me-before-you.jpg",
+      "ratings": 5,
+      "genre": "Drama, Romance",
+      "status": "trending",
+      "directed": "Angel Locsin",
+      "available": false
+    },
+    {
+      "id": 7,
+      "name": "Now You See Me 2",
+      "imageUrl": "assets/images/movies/now-you-see-me.jpg",
+      "ratings": 7,
+      "genre": "Action, Comedy, Triller",
+      "status": "coming",
+      "directed": "Jonas Brother",
+      "available": false
+    },
+    {
+      "id": 8,
+      "name": "The Shallows",
+      "imageUrl": "assets/images/movies/the-shallows.jpeg",
+      "ratings": 4.8,
+      "genre": "Horror, Drama, Thriller",
+      "status": "",
+      "directed": "Leo Pill",
+      "available": true
+    },
+    {
+      "id": 9,
+      "name": "The Fits",
+      "imageUrl": "assets/images/movies/the-fits.jpg",
+      "ratings": 6,
+      "genre": "Drama",
+      "status": "trending",
+      "directed": "Joe Jonas",
+      "available": false
+    },
+    {
+      "id": 10,
+      "name": "Money Monster",
+      "imageUrl": "assets/images/movies/money-monster.jpg",
+      "ratings": 5.5,
+      "genre": "Crime, Drama, Thriller",
+      "status": "",
+      "directed": "Stan Lee",
+      "available": true
+    }
+  ]
+}
