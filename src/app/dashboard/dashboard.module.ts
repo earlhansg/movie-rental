@@ -5,6 +5,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 
 import { DashboardComponent } from './container/dashboard.component';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { ContentComponent } from './components/content/content.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { HeaderBarComponent } from './components/header-bar/header-bar.component
     ],
     declarations: [
       DashboardComponent,
-      HeaderBarComponent
+      HeaderBarComponent,
+      SideBarComponent,
+      ContentComponent
     ]
 })
 export class DashboardModule {}
