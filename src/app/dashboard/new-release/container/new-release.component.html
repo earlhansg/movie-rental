@@ -1,1 +1,10 @@
-<h1>New release</h1>
+<div class="release">
+  <div class="header">
+    <span class="header-text">
+      New Releases
+    </span>
+  </div>
+  <ng-container *ngIf="newRelease">
+    <app-movie-list [movies]="newRelease"></app-movie-list>
+  </ng-container>
+</div>

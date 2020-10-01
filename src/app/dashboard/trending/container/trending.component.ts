@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { ReplaySubject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
+import { MovieService } from '../../services/movie.service';
+
+import { Movie } from '../../shared/models';
 
 
 @Component({
@@ -6,10 +13,25 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './trending.component.html',
   styleUrls: ['./trending.component.scss']
 })
-export class TrendingComponent implements OnInit {
+export class TrendingComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
-  ngOnInit(): void {}
+  trending: Movie[];
+
+
+  constructor(private movieService: MovieService) { }
+
+  ngOnInit(): void {
+    this.movieService
+      .getTrendingMovies()
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe(res => this.trending = res);
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
+  }
 
 }

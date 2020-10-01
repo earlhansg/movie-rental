@@ -1,1 +1,10 @@
-<h1>Borrowed</h1>
+<div class="borrowed">
+  <div class="header">
+    <span class="header-text">
+      Borrowed
+    </span>
+  </div>
+  <ng-container *ngIf="borrowed">
+    <app-movie-list [movies]="borrowed"></app-movie-list>
+  </ng-container>
+</div>

@@ -1,1 +1,10 @@
-<h1>Trending</h1>
+<div class="trending">
+  <div class="header">
+    <span class="header-text">
+      Trending
+    </span>
+  </div>
+  <ng-container *ngIf="trending">
+    <app-movie-list [movies]="trending"></app-movie-list>
+  </ng-container>
+</div>

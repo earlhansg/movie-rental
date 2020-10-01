@@ -1,1 +1,10 @@
-<h1>Coming Soon</h1>
+<div class="coming">
+  <div class="header">
+    <span class="header-text">
+      Coming Soon
+    </span>
+  </div>
+  <ng-container *ngIf="upcoming">
+    <app-movie-list [movies]="upcoming"></app-movie-list>
+  </ng-container>
+</div>

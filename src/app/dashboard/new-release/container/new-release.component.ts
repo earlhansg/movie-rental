@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { ReplaySubject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
+import { MovieService } from '../../services/movie.service';
+
+import { Movie } from '../../shared/models';
 
 
 @Component({
@@ -6,10 +13,25 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './new-release.component.html',
   styleUrls: ['./new-release.component.scss']
 })
-export class NewReleaseComponent implements OnInit {
+export class NewReleaseComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
-  ngOnInit(): void {}
+  newRelease: Movie[];
+
+
+  constructor(private movieService: MovieService) { }
+
+  ngOnInit(): void {
+    this.movieService
+      .getNewMovies()
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe(res => this.newRelease = res);
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
+  }
 
 }
