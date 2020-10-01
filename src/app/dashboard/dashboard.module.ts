@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
 import { DashboardComponent } from './container/dashboard.component';
+import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 
 
 @NgModule({
@@ -11,6 +12,9 @@ import { DashboardComponent } from './container/dashboard.component';
       BrowserModule,
       DashboardRoutingModule
     ],
-    declarations: [ DashboardComponent ]
+    declarations: [
+      DashboardComponent,
+      HeaderBarComponent
+    ]
 })
 export class DashboardModule {}

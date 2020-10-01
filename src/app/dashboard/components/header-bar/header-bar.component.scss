@@ -1,0 +1,32 @@
+@import 'src/assets/styles/base/colors.scss';
+
+.header-bar {
+  min-height: 3rem;
+}
+
+.header {
+  background-color: $pink-400;
+  color: $white-100;
+  width: 20%;
+
+  &-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+}
+
+.user {
+  background-color: $pink-300;
+  color: $white-100;
+  width: 80%;
+
+  &-name {
+    margin-right: 1.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+}
+
+
