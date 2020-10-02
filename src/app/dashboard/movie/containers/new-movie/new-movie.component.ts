@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ReplaySubject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { MovieService } from 'src/app/dashboard/services/movie.service';
 
@@ -11,7 +13,9 @@ import { movieformData } from '../../data/form.data';
   templateUrl: './new-movie.component.html',
   styleUrls: ['./new-movie.component.scss']
 })
-export class NewMovieComponent implements OnInit {
+export class NewMovieComponent implements OnInit, OnDestroy {
+
+  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
   movieformData = movieformData;
 
@@ -22,6 +26,11 @@ export class NewMovieComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
+  }
 
 
   onSubmitted(event): void {
@@ -35,6 +44,7 @@ export class NewMovieComponent implements OnInit {
 
     this.movieService
       .addMovie({...event, imageUrl, returnDate, borrowedId, available})
+      .pipe(takeUntil(this.destroyed$))
       .subscribe(() => this.router.navigateByUrl(`dashboard/${url}`));
 
   }
