@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, OnChanges } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -11,6 +11,9 @@ export class FormComponent implements OnChanges {
 
   @Input()
   props;
+
+  @Output()
+  submitted = new EventEmitter();
 
   form: FormGroup;
 
@@ -42,7 +45,9 @@ export class FormComponent implements OnChanges {
   }
 
   submit(): void {
-    console.log('values in form', this.form.value);
+    if (this.form.value) {
+      this.submitted.emit(this.form.value);
+    }
   }
 
 }

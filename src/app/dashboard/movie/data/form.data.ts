@@ -2,7 +2,7 @@
 const date = new Date();
 
 export const formData = {
-  borrowedDate: {
+  returnDate: {
     label: 'Date',
     type: 'date',
     value: date

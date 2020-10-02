@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { MovieService } from '../../services/movie.service';
 
-import { Movie } from '../../shared/models';
+import { Movie, User } from '../../shared/models';
 
 
 @Component({
@@ -18,13 +18,15 @@ export class BorrowedComponent implements OnInit, OnDestroy {
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
   borrowed: Movie[];
+  user: User;
 
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
     this.movieService
-      .getBorrowedMovies()
+      .getBorrowedMovies(this.user.id)
       .pipe(takeUntil(this.destroyed$))
       .subscribe(res => this.borrowed = res);
   }

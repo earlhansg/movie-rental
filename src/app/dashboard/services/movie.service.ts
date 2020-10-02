@@ -16,7 +16,7 @@ import { Movie } from '../shared/models';
 export class MovieService extends RestService {
 
   newUrl = '/movies?status=new';
-  borrowedUrl = '/movies?status=borrowed';
+  borrowedUrl = '/movies?borrowedId';
   upcomingUrl = '/movies?status=upcoming';
   trendingUrl = '/movies?status=trending';
   movieUrl = '/movies';
@@ -31,8 +31,8 @@ export class MovieService extends RestService {
     return this.request(this.newUrl, HttpMethodEnum.GET);
   }
 
-  getBorrowedMovies(): Observable<Movie[]> {
-    return this.request(this.borrowedUrl, HttpMethodEnum.GET);
+  getBorrowedMovies(userId: number): Observable<Movie[]> {
+    return this.request(`${this.borrowedUrl}=${userId}`, HttpMethodEnum.GET);
   }
 
   getUpcomingMovies(): Observable<Movie[]> {
@@ -45,6 +45,16 @@ export class MovieService extends RestService {
 
   getMovieById(id: number): Observable<Movie> {
     return this.request(`${this.movieUrl}/${id}`, HttpMethodEnum.GET);
+  }
+
+  updateMovie(id: number, userId: number, date: string): Observable<Movie> {
+    const available = false;
+    const status = 'borrowed';
+    const borrowedId = userId;
+    const returnDate = date;
+
+    return this.request(`${this.movieUrl}/${id}`,
+      HttpMethodEnum.PATCH, { available, status, borrowedId, returnDate });
   }
 
 }

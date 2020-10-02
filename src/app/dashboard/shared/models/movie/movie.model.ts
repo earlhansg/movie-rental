@@ -8,4 +8,5 @@ export interface Movie {
   directed: string;
   available: boolean;
   about: string;
+  borrowedId?: number;
 }

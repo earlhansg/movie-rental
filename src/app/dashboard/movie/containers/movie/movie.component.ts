@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
 
 import { MovieService } from '../../../services/movie.service';
 
-import { Movie } from '../../../shared/models';
+import { Movie, User } from '../../../shared/models';
 
 import { formData } from '../../data/form.data';
 
@@ -21,16 +21,27 @@ export class MovieComponent implements OnInit {
   movie$: Observable<Movie>;
 
   formData = formData;
-
+  user: User;
+  paramId: number;
 
   constructor(
     private movieService: MovieService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
     this.movie$ = this.route.params
-      .pipe(switchMap(param => this.movieService.getMovieById(param.id)));
+      .pipe(
+        tap(({ id }) => this.paramId = id),
+        switchMap(param => this.movieService.getMovieById(param.id))
+      );
+  }
+
+  onSubmitted({returnDate}): void {
+    this.movieService.updateMovie(this.paramId, this.user.id, returnDate)
+      .subscribe(data => this.router.navigateByUrl(`dashboard/borrowed`));
   }
 
 }

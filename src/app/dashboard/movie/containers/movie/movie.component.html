@@ -13,8 +13,10 @@
       </div>
     </div>
   </div>
-  <app-form [props]="formData">
+  <app-form 
+    [props]="formData"
+    (submitted)="onSubmitted($event)">
     <p>{{movie.about}}</p>
-    <button type="submit" class="mr-3 btn-custom">Borrowed</button>
+    <button *ngIf="!user.admin" type="submit" class="mr-3 btn-custom">Borrowed</button>
   </app-form>
 </div>
