@@ -17,6 +17,15 @@
       "address": "Caloocan City",
       "userId": 2011100622,
       "admin": false
+    },
+    {
+      "firstName": "Kristy",
+      "lastName": "Almuete",
+      "gender": "F",
+      "address": "Mindanao",
+      "userId": 22222,
+      "admin": false,
+      "id": 3
     }
   ],
   "movies": [

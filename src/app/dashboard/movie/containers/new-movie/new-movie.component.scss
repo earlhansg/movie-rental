@@ -2,7 +2,7 @@
 @import 'src/assets/styles/base/custom.scss';
 
 .movie {
-  width: 24%;
+  width: 15%;
   &-content__img {
     img {
       width: 100%;
@@ -16,7 +16,7 @@
 }
 
 app-form {
-  width: 74%;
+  width: 80%;
 }
 
 ::ng-deep app-form {

@@ -10,7 +10,7 @@ export const userformData = {
     label: 'Lastname',
     type: 'text',
     placeholder: 'Enter the lastname',
-    value: 5
+    value: ''
   },
   gender: {
     label: 'Gender',
@@ -23,9 +23,9 @@ export const userformData = {
     ]
   },
   address: {
-    label: 'Directed',
+    label: 'Address',
     type: 'text',
-    placeholder: 'Enter name',
+    placeholder: 'Enter your address',
     value: ''
   },
   userId: {

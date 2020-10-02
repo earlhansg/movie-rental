@@ -39,7 +39,7 @@ export class UsersComponent implements OnInit, OnDestroy {
   }
 
   navigate(): void {
-    this.router.navigateByUrl(`users/new`);
+    this.router.navigateByUrl(`dashboard/users/new`);
   }
 
 }

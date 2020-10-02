@@ -6,7 +6,8 @@
        routerLinkActive="active-route">Trending</a>
     <a [routerLink]="['./coming-soon']" 
        routerLinkActive="active-route">Coming Soon</a>
-    <a [routerLink]="['./borrowed']" 
+    <a *ngIf="!user.admin"
+       [routerLink]="['./borrowed']" 
        routerLinkActive="active-route">Borrowed</a>
     <a *ngIf="user.admin"
        [routerLink]="['./users']" 

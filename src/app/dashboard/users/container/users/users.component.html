@@ -3,7 +3,7 @@
     <span class="header-text mr-auto">
       Users
     </span>
-    <button class="btn-custom">New User</button>
+    <button class="btn-custom" (click)="navigate()">New User</button>
   </div>
   <ng-container *ngIf="users">
     <app-user-list [users]="users"></app-user-list>

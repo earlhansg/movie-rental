@@ -27,4 +27,8 @@ export class UserService extends RestService {
     return this.request(this.usersUrl, HttpMethodEnum.GET);
   }
 
+  addUser(user: User): Observable<User> {
+    return this.request(this.usersUrl, HttpMethodEnum.POST, user);
+  }
+
 }
