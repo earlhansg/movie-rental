@@ -6,7 +6,9 @@
       </span>
     </div>
   </div>
-  <app-form [props]="movieformData">
+  <app-form 
+    [props]="movieformData"
+    (submitted)="onSubmitted($event)">
     <button type="submit" class="btn-custom mt-3">Add Movie</button>
   </app-form>
 </div>

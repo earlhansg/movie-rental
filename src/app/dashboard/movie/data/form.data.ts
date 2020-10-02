@@ -28,6 +28,17 @@ export const movieformData = {
     placeholder: 'Enter movie genre',
     value: ''
   },
+  status: {
+    label: 'Status',
+    type: 'select',
+    value: 'new',
+    options: [
+      { label: '(choose one)', value: '' },
+      { label: 'Upcoming', value: 'upcoming' },
+      { label: 'Trending', value: 'trending' },
+      { label: 'New', value: 'new' }
+    ]
+  },
   directed: {
     label: 'Directed',
     type: 'text',

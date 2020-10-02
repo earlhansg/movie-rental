@@ -25,9 +25,9 @@ export class MovieComponent implements OnInit {
   paramId: number;
 
   constructor(
-    private movieService: MovieService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private movieService: MovieService
   ) { }
 
   ngOnInit(): void {

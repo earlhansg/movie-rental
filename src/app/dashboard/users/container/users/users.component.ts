@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ReplaySubject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -20,7 +21,10 @@ export class UsersComponent implements OnInit, OnDestroy {
   users: User[];
 
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
     this.userService
@@ -32,6 +36,10 @@ export class UsersComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroyed$.next(true);
     this.destroyed$.complete();
+  }
+
+  navigate(): void {
+    this.router.navigateByUrl(`users/new`);
   }
 
 }

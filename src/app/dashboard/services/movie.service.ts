@@ -57,4 +57,8 @@ export class MovieService extends RestService {
       HttpMethodEnum.PATCH, { available, status, borrowedId, returnDate });
   }
 
+  addMovie(movie: Movie): Observable<Movie> {
+    return this.request(this.movieUrl, HttpMethodEnum.POST, movie);
+  }
+
 }

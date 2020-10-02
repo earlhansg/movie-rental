@@ -1,12 +1,12 @@
 export interface Movie {
-  id: number;
+  id?: number;
   name: string;
   imageUrl: string;
   ratings: number;
   genre: string;
   status?: string;
   directed: string;
-  available: boolean;
+  available?: boolean;
   about: string;
   borrowedId?: number;
 }
