@@ -18,8 +18,10 @@ export class MovieListComponent {
 
   constructor(private router: Router) { }
 
-  checkMovie(isAvailable: boolean, movieId: number): void {
+  checkMovie(isAvailable: boolean, movieId: number, borrowedId = null): void {
     if (isAvailable) {
+      this.router.navigateByUrl(`dashboard/movie/${movieId}`);
+    } else if (borrowedId) {
       this.router.navigateByUrl(`dashboard/movie/${movieId}`);
     }
   }

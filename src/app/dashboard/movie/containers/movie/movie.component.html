@@ -15,8 +15,13 @@
   </div>
   <app-form 
     [props]="formData"
-    (submitted)="onSubmitted($event)">
+    [borrowed]="!movie.available && movie.borrowedId ? true : false"
+    (submitted)="onSubmitted($event)"
+    (returned)="onReturned($event)">
     <p>{{movie.about}}</p>
-    <button *ngIf="!user.admin" type="submit" class="mr-3 btn-custom">Borrowed</button>
+    <button 
+      *ngIf="!user.admin && !movie.borrowedId" 
+      type="submit" 
+      class="mr-3 btn-custom">Borrow</button>
   </app-form>
 </div>

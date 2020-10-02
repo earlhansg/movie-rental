@@ -12,8 +12,14 @@ export class FormComponent implements OnChanges {
   @Input()
   props;
 
+  @Input()
+  borrowed = false;
+
   @Output()
   submitted = new EventEmitter();
+
+  @Output()
+  returned = new EventEmitter();
 
   form: FormGroup;
 
@@ -48,6 +54,14 @@ export class FormComponent implements OnChanges {
     if (this.form.value) {
       this.submitted.emit(this.form.value);
     }
+  }
+
+  returnMovie(): void {
+    const available = true;
+    const borrowedId = null;
+    const returnDate = null;
+    const status = 'trending';
+    this.returned.emit({...this.form.value, available, borrowedId, returnDate, status});
   }
 
 }

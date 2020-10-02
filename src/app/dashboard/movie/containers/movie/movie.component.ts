@@ -24,6 +24,7 @@ export class MovieComponent implements OnInit, OnDestroy {
   formData = formData;
   user: User;
   paramId: number;
+  checkMoviesStatus: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -48,6 +49,13 @@ export class MovieComponent implements OnInit, OnDestroy {
 
   onSubmitted({returnDate}): void {
     this.movieService.updateMovie(this.paramId, this.user.id, returnDate)
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe(data => this.router.navigateByUrl(`dashboard/borrowed`));
+  }
+
+  onReturned(event): void {
+    console.log(event);
+    this.movieService.returnMovie(this.paramId, this.user.id, event)
       .pipe(takeUntil(this.destroyed$))
       .subscribe(data => this.router.navigateByUrl(`dashboard/borrowed`));
   }

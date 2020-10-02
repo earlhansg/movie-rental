@@ -2,7 +2,7 @@
   <ng-content select="p"></ng-content>
   <form [formGroup]="form" (ngSubmit)="submit()">
     <div *ngFor="let prop of formProps">
-      <div [ngSwitch]="prop.type">
+      <div [ngSwitch]="prop.type" *ngIf="!borrowed">
         <div class="form-container" *ngSwitchCase="'text'">
           <label [for]="prop.label">{{prop.label}}</label>
           <input type="text" formControlName="{{prop.key}}" [placeholder]="prop.placeholder">
@@ -30,4 +30,10 @@
     </div>
     <ng-content select="button"></ng-content>
   </form>
+
+  <button 
+    class="btn-custom" 
+    *ngIf="borrowed"
+    (click)="returnMovie()">Return</button>
+
 </div>

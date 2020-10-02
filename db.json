@@ -17,15 +17,6 @@
       "address": "Caloocan City",
       "userId": 2011100622,
       "admin": false
-    },
-    {
-      "firstName": "Kristy",
-      "lastName": "Almuete",
-      "gender": "F",
-      "address": "Mindanao",
-      "userId": 22222,
-      "admin": false,
-      "id": 3
     }
   ],
   "movies": [
@@ -61,11 +52,11 @@
       "imageUrl": "assets/images/movies/space-between-us.jpg",
       "ratings": 8.1,
       "genre": "Drama, Sci-fi",
-      "status": "borrowed",
-      "borrowedId": 2,
-      "returnDate": "2020-10-02T16:42:18.793Z",
+      "status": "trending",
+      "borrowedId": null,
+      "returnDate": null,
       "directed": "Lili G",
-      "available": false,
+      "available": true,
       "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
     },
     {
@@ -74,7 +65,7 @@
       "imageUrl": "assets/images/movies/the-witch.jpg",
       "ratings": 7,
       "genre": "Horror, Mystery",
-      "status": "new",
+      "status": "trending",
       "borrowedId": null,
       "returnDate": null,
       "directed": "Peter Pan",
@@ -100,7 +91,7 @@
       "imageUrl": "assets/images/movies/me-before-you.jpg",
       "ratings": 5,
       "genre": "Drama, Romance",
-      "status": "trending",
+      "status": "new",
       "borrowedId": null,
       "returnDate": null,
       "directed": "Angel Locsin",
@@ -126,7 +117,7 @@
       "imageUrl": "assets/images/movies/the-shallows.jpeg",
       "ratings": 4.8,
       "genre": "Horror, Drama, Thriller",
-      "status": "new",
+      "status": "trending",
       "borrowedId": null,
       "returnDate": null,
       "directed": "Leo Pill",
@@ -152,11 +143,11 @@
       "imageUrl": "assets/images/movies/money-monster.jpg",
       "ratings": 5.5,
       "genre": "Crime, Drama, Thriller",
-      "status": "borrowed",
-      "borrowedId": 2,
-      "returnDate": "2020-10-02T16:42:18.793Z",
+      "status": "trending",
+      "returnDate": null,
+      "available": true,
+      "borrowedId": null,
       "directed": "Stan Lee",
-      "available": false,
       "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
     }
   ]
