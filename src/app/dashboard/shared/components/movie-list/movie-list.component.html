@@ -3,7 +3,11 @@
     <div class="mcard d-flex flex-column justify-content-center">
       <span class="mcard-rating badge position-absolute">{{movie.ratings}}</span>
       <span class="mcard-img mt-2">
-        <img class="cursor-pointer" [src]="movie.imageUrl" [alt]="movie.name">
+        <img 
+          [class.cursor-pointer]="movie.available" 
+          [src]="movie.imageUrl" 
+          [alt]="movie.name"
+          (click)="checkMovie(movie.available, movie.id)">
       </span>
       <div class="d-flex flex-column justify-content-center mt-2">
         <span class="mcard-primary-text">{{movie.name}}</span>

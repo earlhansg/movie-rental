@@ -1,9 +1,15 @@
 <div class="side-bar">
   <div class="menu d-flex flex-column">
-    <a href="">New Releases</a>
-    <a href="">Trending</a>
-    <a href="">Coming Soon</a>
-    <a href="">Borrowed</a>
-    <a href="">Users</a>
+    <a [routerLink]="['./new-release']" 
+       routerLinkActive="active-route">New Releases</a>
+    <a [routerLink]="['./trending']" 
+       routerLinkActive="active-route">Trending</a>
+    <a [routerLink]="['./coming-soon']" 
+       routerLinkActive="active-route">Coming Soon</a>
+    <a [routerLink]="['./borrowed']" 
+       routerLinkActive="active-route">Borrowed</a>
+    <a *ngIf="user.admin"
+       [routerLink]="['./users']" 
+       routerLinkActive="active-route">Users</a>
   </div>
 </div>

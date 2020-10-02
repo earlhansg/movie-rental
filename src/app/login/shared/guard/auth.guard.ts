@@ -14,8 +14,7 @@ export class AuthGuard implements CanActivate {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
   }
 
-  // tslint:disable-next-line: typedef
-  canActivate() {
+  canActivate(): boolean {
     if (this.user) {
       return true;
     } else {

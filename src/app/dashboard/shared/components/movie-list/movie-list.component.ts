@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Movie } from '../../models';
 
@@ -15,6 +16,12 @@ export class MovieListComponent {
   movies: Movie[];
 
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  checkMovie(isAvailable: boolean, movieId: number): void {
+    if (isAvailable) {
+      this.router.navigateByUrl(`dashboard/movie/${movieId}`);
+    }
+  }
 
 }
