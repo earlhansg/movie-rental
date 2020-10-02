@@ -7,4 +7,5 @@ export interface Movie {
   status?: string;
   directed: string;
   available: boolean;
+  about: string;
 }

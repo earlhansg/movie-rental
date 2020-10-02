@@ -19,6 +19,7 @@ export class MovieService extends RestService {
   borrowedUrl = '/movies?status=borrowed';
   upcomingUrl = '/movies?status=upcoming';
   trendingUrl = '/movies?status=trending';
+  movieUrl = '/movies';
 
 
   constructor(
@@ -40,6 +41,10 @@ export class MovieService extends RestService {
 
   getTrendingMovies(): Observable<Movie[]> {
     return this.request(this.trendingUrl, HttpMethodEnum.GET);
+  }
+
+  getMovieById(id: number): Observable<Movie> {
+    return this.request(`${this.movieUrl}/${id}`, HttpMethodEnum.GET);
   }
 
 }

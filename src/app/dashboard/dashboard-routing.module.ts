@@ -29,6 +29,11 @@ const routes: Routes = [
         .then(mod => mod.BorrowedModule)
       },
       {
+        path: 'movie',
+        loadChildren: () => import('./movie/movie.module')
+        .then(mod => mod.MovieModule)
+      },
+      {
         path: '',
         redirectTo: 'new-release',
         pathMatch: 'full'

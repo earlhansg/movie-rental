@@ -1,0 +1,14 @@
+<div class="form mt-3">
+  <ng-content select="p"></ng-content>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div *ngFor="let prop of formProps">
+      <div [ngSwitch]="prop.type">
+        <div *ngSwitchCase="'date'">
+          <input type="text" formControlName="{{prop.key}}" bsDatepicker [minDate]="minDate"
+          [maxDate]="maxDate"/>
+        </div>
+      </div>  
+    </div>
+    <ng-content select="button"></ng-content>
+  </form>
+</div>

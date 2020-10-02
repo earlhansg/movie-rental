@@ -3,3 +3,25 @@
 $box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 .cursor-pointer { cursor: pointer; }
+
+.btn-custom {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: $pink-400;
+  background-color: $gray-750;
+  padding: 0 0.5rem;
+  border-radius: 25px;
+  border: 1.5px solid $pink-400;
+  transition: 0.3s all;
+
+  &:hover, &:active {
+    background-color: $pink-400;
+    color: $gray-100;
+  }
+
+}
+
+.input-custom {
+  padding: 0 1rem;
+  border-radius: 25px;
+}
