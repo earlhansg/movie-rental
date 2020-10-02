@@ -1,0 +1,12 @@
+<div class="d-flex">
+  <div class="users d-flex flex-column mt-3">
+    <div class="users-content d-flex flex-column m-3">
+      <span class="users-content__img d-flex align-items-center justify-content-center">
+        <fa-icon [icon]="faUser"></fa-icon>
+      </span>
+    </div>
+  </div>
+  <app-form [props]="userformData">
+    <button type="submit" class="btn-custom mt-3">Add User</button>
+  </app-form>
+</div>

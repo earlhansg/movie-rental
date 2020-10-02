@@ -1,0 +1,26 @@
+@import 'src/assets/styles/base/colors.scss';
+@import 'src/assets/styles/base/custom.scss';
+
+.list {
+  height: 70vh;
+  overflow: auto;
+}
+
+.user {
+  background-color: $gray-200;
+  &-img {
+    width: 10%;
+    fa-icon {
+      font-size: 2.5rem;
+    }
+  }
+  &-info {
+    span:not(:first-child){
+      font-size: 0.8rem;
+    }
+    span:first-child {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+  }
+}

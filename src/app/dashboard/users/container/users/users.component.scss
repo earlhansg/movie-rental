@@ -1,0 +1,15 @@
+@import 'src/assets/styles/base/colors.scss';
+@import 'src/assets/styles/base/custom.scss';
+
+.users {
+  margin: 2.5rem 1.5rem;
+}
+
+.header {
+  color: $gray-200;
+  
+  &-text {
+    font-weight: 600;
+  }
+
+}

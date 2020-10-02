@@ -19,6 +19,13 @@
           <input type="text" formControlName="{{prop.key}}" bsDatepicker [minDate]="minDate"
           [maxDate]="maxDate"/>
         </div>
+        <div class="form-container" *ngSwitchCase="'select'">
+          <select [formControlName]="prop.key">
+            <option *ngFor="let option of prop.options" [value]="option.value" >
+              {{ option.label }}
+            </option>
+          </select>
+        </div>
       </div>  
     </div>
     <ng-content select="button"></ng-content>

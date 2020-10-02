@@ -1,0 +1,14 @@
+<div class="list">
+  <div class="list-container mt-2" *ngFor="let user of users">
+    <div class="user p-2 d-flex flex-row">
+      <span class="user-img d-flex align-items-center justify-content-center">
+        <fa-icon [icon]="faUser"></fa-icon>
+      </span>
+      <div class="user-info d-flex flex-column">
+        <span>{{user.firstName}} {{user.lastName}}</span>
+        <span>{{user.gender}}</span>
+        <span>{{user.userId}}</span>
+      </div>
+    </div>
+  </div>
+</div>

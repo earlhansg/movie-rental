@@ -34,7 +34,8 @@ export class FormComponent implements OnChanges {
         key: prop,
         label: this.props[prop].label,
         type: this.props[prop].type,
-        placeholder: this.props[prop].placeholder || ''
+        placeholder: this.props[prop].placeholder || '',
+        options: this.props[prop].options || [],
       });
     }
     this.form = new FormGroup(formDataObj);

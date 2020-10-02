@@ -1,4 +1,22 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Earl Hans",
+      "lastName": "Genoso",
+      "gender": "M",
+      "address": "Cagayan de Oro City",
+      "userId": 2011100690
+    },
+    {
+      "id": 2,
+      "firstName": "Yu Hans",
+      "lastName": "Genoso",
+      "gender": "M",
+      "address": "Caloocan City",
+      "userId": 2011100622
+    }
+  ],
   "movies": [
     {
       "id": 1,

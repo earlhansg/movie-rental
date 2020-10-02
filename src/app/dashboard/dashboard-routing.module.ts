@@ -34,6 +34,11 @@ const routes: Routes = [
         .then(mod => mod.MovieModule)
       },
       {
+        path: 'users',
+        loadChildren: () => import('./users/user.module')
+        .then(mod => mod.UserModule)
+      },
+      {
         path: '',
         redirectTo: 'new-release',
         pathMatch: 'full'

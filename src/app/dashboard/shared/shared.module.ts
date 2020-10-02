@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { FormComponent } from './components/form/form.component';
@@ -12,7 +13,8 @@ import { FormComponent } from './components/form/form.component';
     imports: [
       CommonModule,
       ReactiveFormsModule,
-      BsDatepickerModule.forRoot()
+      BsDatepickerModule.forRoot(),
+      FontAwesomeModule
     ],
     declarations: [
       MovieListComponent,
@@ -20,7 +22,8 @@ import { FormComponent } from './components/form/form.component';
     ],
     exports: [
       MovieListComponent,
-      FormComponent
+      FormComponent,
+      FontAwesomeModule
     ]
 })
 export class SharedModule {}
