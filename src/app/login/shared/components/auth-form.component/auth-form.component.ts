@@ -21,7 +21,7 @@ export class AuthFormComponent {
   constructor() { }
 
   onFormSubmit(): void {
-    this.submitted.next(this.userForm.get('entryId').value);
+    this.submitted.next(this.userForm.get('userId').value);
     this.userForm.reset();
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../shared/models';
 
 
 @Component({
@@ -8,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  user: User;
+
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
+  }
 
 }

@@ -1,15 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { Observable, of, ReplaySubject } from 'rxjs';
+import { map, takeUntil, tap } from 'rxjs/operators';
+import { User } from 'src/app/dashboard/shared/models';
+
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnDestroy {
 
-  constructor() { }
+  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
-  ngOnInit(): void {}
+  error$: Observable<string>;
+
+
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) { }
+
+  ngOnDestroy(): void {}
+
+  onSubmittedForm(entryId: string): void {
+    this.authService
+      .login(parseInt(entryId, 10))
+      .pipe(
+        map(res => res[0]),
+        tap(user => user ? localStorage.setItem('currentUser', JSON.stringify(user)) : null),
+        takeUntil(this.destroyed$)
+      )
+      .subscribe((user: User) => {
+        if (user) {
+          this.router.navigateByUrl('dashboard');
+        } else {
+          this.error$ = of('cant find your id');
+        }
+      });
+  }
 
 }

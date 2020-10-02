@@ -5,4 +5,5 @@ export interface User {
   gender: string;
   address: string;
   userId: number;
+  admin: boolean;
 }
