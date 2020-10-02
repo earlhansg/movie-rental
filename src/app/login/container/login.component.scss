@@ -1,0 +1,12 @@
+@import 'src/assets/styles/base/colors.scss';
+@import 'src/assets/styles/base/custom.scss';
+
+.container-fluid {
+    background-color: $gray-750;
+    height: 100vh;
+    @extend .vertical-horizontal-align
+}
+
+.footer {
+    bottom: 1rem;
+}

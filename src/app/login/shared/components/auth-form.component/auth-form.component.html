@@ -1,0 +1,31 @@
+<div class="form">
+  <div class="form__container d-md-flex bg-white overflow-hidden">
+      <div class="form-header flex-column">
+          <span class="form-header__first mt-3">Movie Renter</span>
+          <small class="form-header__second">Just eat and chill</small>
+      </div>
+      <!-- end of .form-header  -->
+      <div class="form-input flex-column">
+          <form class="flex-column" 
+                [formGroup]="userForm" 
+                (ngSubmit)="onFormSubmit()">
+                
+              <input class="form-control mt-3" 
+                     formControlName="userId"
+                     placeholder="Enter your ID"
+                     minlength="6"
+                     required>
+              <span class="mt-1 text-danger"
+                    *ngIf="errorMessage">
+                    {{errorMessage}}
+              </span>
+              <button class="btn-custom mt-3" 
+                      [disabled]="!userForm.valid" 
+                      type="submit">Enter</button>
+          </form>
+      </div>
+      <!-- end of .form-input  -->
+  </div>
+  <!-- end of .form__container -->
+</div>
+<!-- end of form  -->

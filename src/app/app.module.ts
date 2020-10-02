@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { LoginModule } from './login/login.module';
 
 import { AppComponent } from './app.component';
 
@@ -18,7 +19,8 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    DashboardModule
+    DashboardModule,
+    LoginModule
   ],
   providers: [
     { provide: 'API_URL', useValue: 'http://localhost:3000' }

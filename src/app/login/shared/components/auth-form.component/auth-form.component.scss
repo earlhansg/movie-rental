@@ -1,0 +1,75 @@
+@import 'src/assets/styles/base/colors.scss';
+@import 'src/assets/styles/base/custom.scss';
+
+:host {
+  width: 65%;
+}
+
+.form {
+  width: 100%;
+
+  @media(max-width: 48em) {
+      &-header, &-input {
+        width: 100% !important;
+        height: auto !important;
+      }
+  }
+
+  @media(max-width: 60em) {
+      &-header__first {
+          font-size: 1.8rem !important;
+      }
+  }
+
+  &__container {
+      width: 100%;
+      border-radius: 1rem;
+
+      & > div { padding: 2rem; }
+  }
+  &-header {
+      width: 45%;
+      height: 20rem;
+      background-color: $pink-400;
+      color: $white;
+      @extend .vertical-horizontal-align;
+
+      &__icon { font-size: 5rem; }
+
+      &__first {
+          font-size: 2.5rem;
+          line-height: 0.7;
+      }
+
+      &__second {
+          font-size: 0.8rem;
+      }
+  }
+
+  &-input {
+      width: 55%;
+      background-color: $white;
+      @extend .vertical-horizontal-align;
+
+      &__label {
+        font-size: 1.1rem;
+        color: $gray-750;
+      }
+
+      form {
+          width: 100%;
+          @extend .vertical-horizontal-align;
+
+          input {
+            width: 70%;
+            border-color: $gray-700;
+          }
+
+          button {
+            font-size: 1.1rem;
+            background-color: $white;
+          }
+      }
+  }
+ 
+}
