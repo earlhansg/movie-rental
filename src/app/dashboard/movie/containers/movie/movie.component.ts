@@ -1,14 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Observable, ReplaySubject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { MovieService } from '../../services/movie.service';
+import { MovieService } from '../../../services/movie.service';
 
-import { Movie } from '../../shared/models';
+import { Movie } from '../../../shared/models';
 
-import { formData } from '../data/form.data';
+import { formData } from '../../data/form.data';
 
 
 @Component({
@@ -17,8 +17,6 @@ import { formData } from '../data/form.data';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-
-  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
   movie$: Observable<Movie>;
 

@@ -12,9 +12,6 @@ export class FormComponent implements OnChanges {
   @Input()
   props;
 
-  @Input()
-  formValues;
-
   form: FormGroup;
 
   formProps = [];
@@ -36,7 +33,8 @@ export class FormComponent implements OnChanges {
       this.formProps.push({
         key: prop,
         label: this.props[prop].label,
-        type: this.props[prop].type
+        type: this.props[prop].type,
+        placeholder: this.props[prop].placeholder || ''
       });
     }
     this.form = new FormGroup(formDataObj);
