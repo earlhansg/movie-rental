@@ -1,4 +1,4 @@
-<div class="movie mt-4">
+<div class="movie mt-4" [@listAnimation]="movies.length">
   <div 
     class="movie-container" 
     *ngFor="let movie of movies; let i = index">
@@ -7,7 +7,7 @@
       <span class="mcard-img mt-2">
         <img 
           [class.cursor-pointer]="movie.available || movie.status === 'borrowed'"
-          [src]="movie.imageUrl" 
+          [src]="movie.imageUrl"
           [alt]="movie.name"
           (click)="checkMovie(movie.available, movie.id, movie.borrowedId)">
       </span>

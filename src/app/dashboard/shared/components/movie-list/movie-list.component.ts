@@ -1,6 +1,8 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { listAnimation } from './movie-list.animation';
+
 import { Movie } from '../../models';
 
 
@@ -8,6 +10,7 @@ import { Movie } from '../../models';
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss'],
+  animations: [listAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MovieListComponent {
