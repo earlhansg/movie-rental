@@ -23,8 +23,8 @@ export class NewReleaseComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private movieService: MovieService,
-    private router: Router
+    private router: Router,
+    private movieService: MovieService
   ) { }
 
   ngOnInit(): void {

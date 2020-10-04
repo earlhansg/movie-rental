@@ -3,12 +3,15 @@
     <span class="header-text mr-auto">
       New Releases
     </span>
-    <button 
+    <button  
       class="btn-custom" 
       (click)="navigate()"
-      *ngIf="user.admin">Add Movies</button>
+      *ngIf="user.admin">Add Movies
+    </button>
   </div>
+  <!-- end of .header  -->
   <ng-container *ngIf="newRelease">
     <app-movie-list [movies]="newRelease"></app-movie-list>
   </ng-container>
 </div>
+<!-- end of .release -->
