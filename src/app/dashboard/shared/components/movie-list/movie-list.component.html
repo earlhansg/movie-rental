@@ -1,5 +1,7 @@
 <div class="movie mt-4">
-  <div class="movie-container" *ngFor="let movie of movies; let i = index">
+  <div 
+    class="movie-container" 
+    *ngFor="let movie of movies; let i = index">
     <div class="mcard d-flex flex-column justify-content-center">
       <span class="mcard-rating badge position-absolute">{{movie.ratings}}</span>
       <span class="mcard-img mt-2">
@@ -13,6 +15,10 @@
         <span class="mcard-primary-text">{{movie.name}}</span>
         <span class="mcard-secondary-text">{{movie.genre}}</span>
       </div>
+      <!-- end of .d-flex  -->
     </div>
+    <!-- end of .mcard  -->
   </div>
+  <!-- end of .movie-container  -->
 </div>
+<!-- end of .movie  -->
