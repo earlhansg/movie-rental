@@ -18,6 +18,7 @@ export class UserListComponent {
 
   faUser = faUser;
 
+
   constructor() { }
 
 }
