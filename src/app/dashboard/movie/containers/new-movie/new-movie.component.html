@@ -5,10 +5,14 @@
         <img src="assets/images/movies/no-image.png" alt="movie image"> 
       </span>
     </div>
+    <!-- end of .movie-content  -->
   </div>
+  <!-- end of .movie  -->
   <app-form 
     [props]="movieformData"
     (submitted)="onSubmitted($event)">
     <button type="submit" class="btn-custom mt-3">Add Movie</button>
   </app-form>
+  <!-- end of app-form  -->
 </div>
+<!-- end of .d-flex  -->
