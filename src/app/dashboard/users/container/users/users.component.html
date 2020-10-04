@@ -5,7 +5,9 @@
     </span>
     <button class="btn-custom" (click)="navigate()">New User</button>
   </div>
+  <!-- end of .header -->
   <ng-container *ngIf="users">
     <app-user-list [users]="users"></app-user-list>
   </ng-container>
 </div>
+<!-- end of .users  -->
