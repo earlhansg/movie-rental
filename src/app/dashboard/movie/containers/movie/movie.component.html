@@ -1,4 +1,5 @@
-<div class="d-flex" *ngIf="(movie$ | async) as movie">
+<div class="d-flex" 
+     *ngIf="(movie$ | async) as movie">
   <div class="movie d-flex flex-column mt-3">
     <div class="movie-content d-flex flex-column m-3">
       <span class="movie-content__img">
@@ -9,19 +10,26 @@
           <span class="content-container__name">{{movie.name}}</span>
           <span class="content-container__genre">{{movie.genre}}</span>
         </div>
+        <!-- end of .content-container  -->
         <span class="content-container__ratings badge">{{movie.ratings}}</span>
       </div>
+      <!-- end of .content  -->
     </div>
+    <!-- end of .movie-content  -->
   </div>
+  <!-- end of .movie  -->
   <app-form 
     [props]="formData"
     [borrowed]="!movie.available && movie.borrowedId ? true : false"
     (submitted)="onSubmitted($event)"
     (returned)="onReturned($event)">
-    <p>{{movie.about}}</p>
-    <button 
-      *ngIf="!user.admin && !movie.borrowedId" 
-      type="submit" 
-      class="mr-3 btn-custom">Borrow</button>
+      <p>{{movie.about}}</p>
+      <button type="submit" 
+        class="mr-3 btn-custom"
+        *ngIf="!user.admin && !movie.borrowedId">
+        Borrow
+      </button>
   </app-form>
+  <!-- end of app-form  -->
 </div>
+<!-- end of .d-flex  -->
