@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <app-auth-form 
     [errorMessage]="(error$ | async)" 
-    (submitted)="onSubmittedForm($event)"></app-auth-form>
+    (submitted)="onSubmittedForm($event)" @fadeAnimation></app-auth-form>
   <footer class="footer text-white position-absolute">
       © Earlhansg 2020
   </footer>

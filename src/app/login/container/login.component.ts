@@ -3,14 +3,18 @@ import { Router } from '@angular/router';
 
 import { Observable, of, ReplaySubject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-import { User } from 'src/app/dashboard/shared/models';
+
+import { fadeAnimation } from './login.animation';
 
 import { AuthService } from '../shared/services/auth.service';
+
+import { User } from 'src/app/dashboard/shared/models';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [fadeAnimation]
 })
 export class LoginComponent implements OnDestroy {
 
