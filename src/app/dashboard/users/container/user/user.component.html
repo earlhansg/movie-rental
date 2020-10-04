@@ -5,10 +5,14 @@
         <fa-icon [icon]="faUser"></fa-icon>
       </span>
     </div>
+    <!-- end of .users-content  -->
   </div>
+  <!-- end of .users -->
   <app-form 
     [props]="userformData"
     (submitted)="onSubmitted($event)">
     <button type="submit" class="btn-custom mt-3">Add User</button>
   </app-form>
+  <!-- end of app-form   -->
 </div>
+<!-- end of .d-flex  -->
