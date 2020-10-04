@@ -19,5 +19,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   - can add user to access the application
 2. User cant add user
 3. When you use User credential 
-  - when you hover a certain movie and then cursor is not "pointer" it means the movie is not available or the movie already been borrowed
+  - when you hover a certain movie and then cursor is not "pointer" 
+    it means the movie is not available or the movie already been borrowed
   - try to navigate to trending there's an available movie there
