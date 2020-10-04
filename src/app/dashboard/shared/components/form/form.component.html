@@ -5,35 +5,55 @@
       <div [ngSwitch]="prop.type" *ngIf="!borrowed">
         <div class="form-container" *ngSwitchCase="'text'">
           <label [for]="prop.label">{{prop.label}}</label>
-          <input type="text" formControlName="{{prop.key}}" [placeholder]="prop.placeholder">
+          <input 
+            type="text" 
+            formControlName="{{prop.key}}" 
+            [placeholder]="prop.placeholder">
         </div>
+        <!-- end of .form-container  -->
         <div class="form-container" *ngSwitchCase="'number'">
           <label [for]="prop.label">{{prop.label}}</label>
-          <input type="number" formControlName="{{prop.key}}" [value]="prop.value">
+          <input 
+            type="number" 
+            formControlName="{{prop.key}}" 
+            [value]="prop.value">
         </div>
+        <!-- end of .form-container  -->
         <div class="form-container" *ngSwitchCase="'text-area'">
           <label [for]="prop.label">{{prop.label}}</label>
           <textarea formControlName="{{prop.key}}"></textarea>
         </div>
+        <!-- end of .form-container  -->
         <div class="form-container" *ngSwitchCase="'date'">
-          <input type="text" formControlName="{{prop.key}}" bsDatepicker [minDate]="minDate"
-          [maxDate]="maxDate"/>
+          <input 
+            type="text" 
+            formControlName="{{prop.key}}" 
+            bsDatepicker 
+            [minDate]="minDate"
+            [maxDate]="maxDate"/>
         </div>
+        <!-- end of .form-container -->
         <div class="form-container" *ngSwitchCase="'select'">
           <select [formControlName]="prop.key">
-            <option *ngFor="let option of prop.options" [value]="option.value" >
+            <option 
+              *ngFor="let option of prop.options" 
+              [value]="option.value" >
               {{ option.label }}
             </option>
           </select>
         </div>
+        <!-- end of .form-container  -->
       </div>  
+      <!-- end of ngSwitch  -->
     </div>
+    <!-- end of formProps loop  -->
     <ng-content select="button"></ng-content>
   </form>
-
+  <!-- end of form  -->
   <button 
     class="btn-custom" 
     *ngIf="borrowed"
-    (click)="returnMovie()">Return</button>
-
+    (click)="returnMovie()">Return
+  </button>
 </div>
+<!-- end of .form  -->

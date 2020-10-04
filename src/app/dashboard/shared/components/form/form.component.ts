@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input,
+  OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
